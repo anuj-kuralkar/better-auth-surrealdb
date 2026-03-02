@@ -1,0 +1,52 @@
+{
+	"name": "better-auth-surrealdb",
+	"type": "module",
+	"version": "0.0.0",
+	"description": "A SurrealDB database adapter for better-auth",
+	"author": "Anuj",
+	"license": "MIT",
+	"keywords": [
+		"better-auth",
+		"surrealdb",
+		"auth",
+		"adapter",
+		"database"
+	],
+	"homepage": "https://github.com/anuj-kuralkar/better-auth-surrealdb#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/anuj-kuralkar/better-auth-surrealdb.git"
+	},
+	"bugs": {
+		"url": "https://github.com/anuj-kuralkar/better-auth-surrealdb/issues"
+	},
+	"exports": {
+		".": "./dist/index.mjs",
+		"./package.json": "./package.json"
+	},
+	"main": "./dist/index.mjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.mts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsdown",
+		"dev": "tsdown --watch",
+		"test": "vitest",
+		"typecheck": "tsc --noEmit",
+		"prepublishOnly": "bun run build"
+	},
+	"devDependencies": {
+		"@better-auth/test-utils": "^1.5.1",
+		"@types/node": "^25.0.3",
+		"bumpp": "^10.4.1",
+		"tsdown": "^0.20.3",
+		"typescript": "^5.9.3",
+		"vitest": "^4.0.16"
+	},
+	"peerDependencies": {
+		"better-auth": "^1.5.1",
+		"surrealdb": "^2.0.0"
+	}
+}
