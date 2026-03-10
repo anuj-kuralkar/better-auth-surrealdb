@@ -35,7 +35,7 @@ export const surrealDBAdapter = ({
 }: {
 	db: Surreal;
 	config?: SurrealDBAdapterConfig;
-}) => {
+}): ((options: BetterAuthOptions) => DBAdapter) => {
 	// Captured lazily — better-auth passes its resolved options only when
 	// the returned factory is called, but we need them inside the
 	// transaction handler which is defined earlier in `adapterOptions`.
