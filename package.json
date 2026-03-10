@@ -1,7 +1,7 @@
 {
 	"name": "better-auth-surrealdb",
 	"type": "module",
-	"version": "0.0.0",
+	"version": "1.0.0-beta.1",
 	"description": "A SurrealDB database adapter for better-auth",
 	"author": "Anuj",
 	"license": "MIT",
