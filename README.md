@@ -2,7 +2,7 @@
 
 A [SurrealDB](https://surrealdb.com) database adapter for [better-auth](https://better-auth.com).
 
-> ⚠️ This package is a work in progress.
+> **Note:** This adapter passes 110 tests covering CRUD operations, joins, transactions, and auth flows. Some edge cases may not yet have test coverage — if you run into issues, please [open an issue](https://github.com/anuj-kuralkar/better-auth-surrealdb/issues).
 
 ## Installation
 
