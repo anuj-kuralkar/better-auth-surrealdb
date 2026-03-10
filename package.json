@@ -28,6 +28,9 @@
 	"files": [
 		"dist"
 	],
+	"imports": {
+		"better-auth-surrealdb": "jsr:@anuj-kuralkar/better-auth-surrealdb"
+	},
 	"scripts": {
 		"build": "tsdown",
 		"dev": "tsdown --watch",
