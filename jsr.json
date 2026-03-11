@@ -1,5 +1,5 @@
 {
-	"name": "@anuj-kuralkar/better-auth-surrealdb",
+	"name": "@alde/ba-surreal",
 	"version": "1.0.0-beta.1",
 	"license": "MIT",
 	"exports": "./src/index.ts",

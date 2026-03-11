@@ -7,7 +7,7 @@ A [SurrealDB](https://surrealdb.com) database adapter for [better-auth](https://
 ## Installation
 
 ```zsh
-bunx jsr add @anuj-kuralkar/better-auth-surrealdb
+bunx jsr add @alde/ba-surreal
 ```
 
 ## Peer Dependencies

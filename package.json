@@ -1,5 +1,5 @@
 {
-	"name": "better-auth-surrealdb",
+	"name": "@alde/ba-surreal",
 	"type": "module",
 	"version": "1.0.0-beta.1",
 	"description": "A SurrealDB database adapter for better-auth",
