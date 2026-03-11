@@ -7,7 +7,7 @@ A [SurrealDB](https://surrealdb.com) database adapter for [better-auth](https://
 ## Installation
 
 ```zsh
-bun add better-auth-surrealdb
+bunx jsr add @anuj-kuralkar/better-auth-surrealdb
 ```
 
 ## Peer Dependencies
@@ -35,7 +35,7 @@ surreal import --conn <connection-url> --user <username> --pass <password> --ns 
 ```ts
 // auth.ts
 import { betterAuth } from "better-auth";
-import { surrealDBAdapter } from "better-auth-surrealdb";
+import { surrealDBAdapter } from "@anuj-kuralkar/better-auth-surrealdb";
 import { getDatabase } from "@/lib/database";
 
 // Get an initialized SurrealDB client
