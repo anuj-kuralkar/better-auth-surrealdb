@@ -1,7 +1,7 @@
 {
 	"name": "@alde/ba-surreal",
 	"type": "module",
-	"version": "1.0.0-beta.1",
+	"version": "1.0.0",
 	"description": "A SurrealDB database adapter for better-auth",
 	"author": "Anuj",
 	"license": "MIT",
