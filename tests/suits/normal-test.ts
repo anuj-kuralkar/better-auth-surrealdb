@@ -1,4 +1,4 @@
-import type { BetterAuthPlugin } from "@better-auth/core";
+import type { BetterAuthPlugin } from "better-auth";
 import type {
 	Account,
 	Session,

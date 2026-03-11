@@ -1,7 +1,7 @@
 import type {
 	AdapterFactoryCustomizeAdapterCreator,
 	CustomAdapter,
-} from "@better-auth/core/db/adapter";
+} from "better-auth/adapters";
 import {
 	raw,
 	type Surreal,

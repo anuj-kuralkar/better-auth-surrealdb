@@ -1,9 +1,6 @@
-import type { BetterAuthOptions } from "@better-auth/core";
-import type {
-	AdapterFactoryOptions,
-	DBAdapter,
-} from "@better-auth/core/db/adapter";
-import { createAdapterFactory } from "@better-auth/core/db/adapter";
+import type { BetterAuthOptions } from "better-auth";
+import type { AdapterFactoryOptions, DBAdapter } from "better-auth/adapters";
+import { createAdapterFactory } from "better-auth/adapters";
 import { RecordId, type Surreal, Uuid } from "surrealdb";
 
 import { buildAdapterMethods } from "./methods";

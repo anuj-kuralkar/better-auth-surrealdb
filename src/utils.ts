@@ -1,4 +1,4 @@
-import type { CleanedWhere } from "@better-auth/core/db/adapter";
+import type { CleanedWhere } from "better-auth/adapters";
 import {
 	contains,
 	DateTime,
