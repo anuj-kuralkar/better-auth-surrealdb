@@ -6,7 +6,7 @@ import { RecordId, type Surreal, Uuid } from "surrealdb";
 import { buildAdapterMethods } from "./methods";
 import { createSchema } from "./schema";
 import { type SurrealDBAdapterConfig, UNSELECTED_FIELD } from "./types";
-import { coerceToOutputId, coerceToRecordId, toDate } from "./utils";
+import { coerceToOutputId, coerceToRecordId } from "./utils";
 
 export { parseRecordId } from "./utils";
 
@@ -73,7 +73,7 @@ export const surrealDBAdapter = ({
 				}
 
 				if (fieldAttributes?.type === "date") {
-					return toDate(data);
+					return data.toDate();
 				}
 
 				return data;
