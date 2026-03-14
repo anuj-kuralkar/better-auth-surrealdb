@@ -58,3 +58,11 @@ Issues and PRs are welcome! Please open an issue before submitting large changes
 ## License
 
 MIT
+
+---
+
+## ☁️ SurrealDB Cloud
+
+Yes, this is a referral link. Yes, I get credits. 
+Yes, you also get free credits. We're both winning here.
+→ [SurrealDB Cloud](https://app.surrealdb.com/referral?code=k99v09od49d9cw8t)
