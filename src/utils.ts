@@ -1,7 +1,6 @@
 import type { CleanedWhere } from "better-auth/adapters";
 import {
 	contains,
-	DateTime,
 	eq,
 	expr,
 	gt,
@@ -103,18 +102,6 @@ export const coerceToOutputId = (data: unknown): unknown => {
 		return toOneOutputId(data);
 	}
 	return data;
-};
-
-/** Normalise SurrealDB `DateTime` / ISO strings into plain JS `Date` objects. */
-export const toDate = (value: unknown): unknown => {
-	if (value === null || value === undefined) return value;
-	if (value instanceof Date) return value;
-	if (value instanceof DateTime) return value.toDate();
-	if (typeof value === "string") {
-		const parsed = new Date(value);
-		return Number.isNaN(parsed.getTime()) ? value : parsed;
-	}
-	return value;
 };
 
 const FIELD_TYPE_MAP: Partial<Record<string, string>> = {
