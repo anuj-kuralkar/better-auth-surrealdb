@@ -41,7 +41,7 @@
 		"@types/node": "^25.0.3",
 		"bumpp": "^10.4.1",
 		"lefthook": "^2.1.4",
-		"tsdown": "^0.20.3",
+		"tsdown": "^0.22.0",
 		"typescript": "^5.9.3",
 		"vitest": "^4.0.18"
 	},
