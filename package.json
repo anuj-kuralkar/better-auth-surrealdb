@@ -37,7 +37,7 @@
 	},
 	"devDependencies": {
 		"@better-auth/test-utils": "^1.6.9",
-		"@surrealdb/node": "3.0.0",
+		"@surrealdb/node": "^3.0.3",
 		"@types/node": "^25.6.2",
 		"bumpp": "^11.1.0",
 		"lefthook": "^2.1.6",
@@ -47,6 +47,6 @@
 	},
 	"peerDependencies": {
 		"better-auth": "^1.6.9",
-		"surrealdb": "^2.0.0"
+		"surrealdb": "^2.0.3"
 	}
 }

@@ -6,7 +6,7 @@
       "name": "better-auth-surrealdb",
       "devDependencies": {
         "@better-auth/test-utils": "^1.6.9",
-        "@surrealdb/node": "3.0.0",
+        "@surrealdb/node": "^3.0.3",
         "@types/node": "^25.6.2",
         "bumpp": "^11.1.0",
         "lefthook": "^2.1.6",
@@ -16,7 +16,7 @@
       },
       "peerDependencies": {
         "better-auth": "^1.6.9",
-        "surrealdb": "^2.0.0",
+        "surrealdb": "^2.0.3",
       },
     },
   },
@@ -215,7 +215,7 @@
 
     "@surrealdb/cbor": ["@surrealdb/cbor@2.0.0-alpha.4", "", {}, "sha512-l/hNZ3ZCOJq8rzwx1y5ZV/8b2bYCWdhGqRVY33Pu50NAHyAW5qLsMn3ZBkZow77mAKwNCsbDsRGnyYEuU95mjw=="],
 
-    "@surrealdb/node": ["@surrealdb/node@3.0.0", "", { "peerDependencies": { "surrealdb": "^2.0.0-0" } }, "sha512-TPRuKQ4NCOEl/3M+GHQ5KYy9nlppmQMpuCqaln0DglEnjxR72RLQoOwaOkt+Y3h4nYt9V2kzIIbUj+2/O4YTGQ=="],
+    "@surrealdb/node": ["@surrealdb/node@3.0.3", "", { "peerDependencies": { "surrealdb": "^2.0.1" } }, "sha512-A8g/dktGBz1eZs5lWFKAsx22A376v7g+o7jkdvsmlxj/uta9t4sUPkTIFjcG4JjJW8dzwt8JTiMl8+FuFuiRnw=="],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.1", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg=="],
 
@@ -363,7 +363,7 @@
 
     "std-env": ["std-env@4.1.0", "", {}, "sha512-Rq7ybcX2RuC55r9oaPVEW7/xu3tj8u4GeBYHBWCychFtzMIr86A7e3PPEBPT37sHStKX3+TiX/Fr/ACmJLVlLQ=="],
 
-    "surrealdb": ["surrealdb@2.0.1", "", { "dependencies": { "@surrealdb/cbor": "2.0.0-alpha.4", "uuidv7": "^1.0.1" }, "peerDependencies": { "tslib": "^2.6.3", "typescript": "^5.0.0" } }, "sha512-CU7vkH0fBZul46QBrrCkIqVKJGjwYNsfvH/AJLa+17WaN1GQYmRKJcBHb477AJtx7fxulgMBHuhZHDKlpLYyRA=="],
+    "surrealdb": ["surrealdb@2.0.3", "", { "dependencies": { "@surrealdb/cbor": "2.0.0-alpha.4", "uuidv7": "^1.0.1" }, "peerDependencies": { "tslib": "^2.6.3", "typescript": "^5.0.0" } }, "sha512-60dXe7K+7M5EUr6VyIgd/SEUCKFXqc54JHUhCTG8IDlqp7pmuuQQWs2wpgulp2oSXpy+9jwKhgNR/mP3wrEgfw=="],
 
     "tinybench": ["tinybench@2.9.0", "", {}, "sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg=="],
 
