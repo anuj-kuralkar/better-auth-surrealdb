@@ -67,10 +67,12 @@ export const buildAdapterMethods = (
 			);
 		}
 
-		let result = (await client.query<[SafeRecord[]]>(query).collect())[0] ?? [];
 		if (typeof offset === "number") {
-			result = result.slice(offset);
+			query.append(` START ${offset}`);
 		}
+
+		let result = (await client.query<[SafeRecord[]]>(query).collect())[0] ?? [];
+
 		if (typeof limit === "number") {
 			result = result.slice(0, limit);
 		}
