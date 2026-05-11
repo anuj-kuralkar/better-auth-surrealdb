@@ -16,7 +16,10 @@ type Client = Surreal | SurrealTransaction;
 
 export const buildAdapterMethods = (
 	client: Client,
-	{ getFieldName }: Parameters<AdapterFactoryCustomizeAdapterCreator>[0],
+	{
+		getFieldName,
+		getFieldAttributes,
+	}: Parameters<AdapterFactoryCustomizeAdapterCreator>[0],
 ): Omit<CustomAdapter, "createSchema"> => ({
 	create: async ({ model, data }) => {
 		const table = new Table(model);
@@ -35,6 +38,7 @@ export const buildAdapterMethods = (
 
 	findMany: async ({ model, where, limit, offset, sortBy, select }) => {
 		const table = new Table(model);
+
 		const selectedFields =
 			select?.map((field) =>
 				getFieldName({
@@ -49,37 +53,21 @@ export const buildAdapterMethods = (
 			buildWhere(where ?? []),
 		);
 
-		let result = (await client.query<[SafeRecord[]]>(query).collect())[0] ?? [];
-
-		// Sorting and pagination are done in JS because SurrealDB's ORDER BY /
-		// LIMIT / START behaviour isn't consistent enough across versions.
 		if (sortBy) {
 			const sortField = getFieldName({
 				model,
 				field: sortBy.field,
 			});
-			result = [...result].sort((a, b) => {
-				const aValue = a[sortField];
-				const bValue = b[sortField];
 
-				let comparison = 0;
-				if (aValue == null && bValue == null) comparison = 0;
-				else if (aValue == null) comparison = -1;
-				else if (bValue == null) comparison = 1;
-				else if (typeof aValue === "number" && typeof bValue === "number") {
-					comparison = aValue - bValue;
-				} else if (aValue instanceof Date && bValue instanceof Date) {
-					comparison = aValue.getTime() - bValue.getTime();
-				} else {
-					comparison = String(aValue).localeCompare(String(bValue));
-				}
+			const attrs = getFieldAttributes({ model, field: sortBy.field });
+			const numeric = attrs?.type === "number" ? "NUMERIC" : "";
 
-				return sortBy.direction.toLowerCase() === "desc"
-					? -comparison
-					: comparison;
-			});
+			query.append(
+				` ORDER BY ${sortField} ${numeric} ${sortBy.direction.toUpperCase()}`,
+			);
 		}
 
+		let result = (await client.query<[SafeRecord[]]>(query).collect())[0] ?? [];
 		if (typeof offset === "number") {
 			result = result.slice(offset);
 		}
