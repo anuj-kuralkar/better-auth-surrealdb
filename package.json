@@ -36,7 +36,7 @@
 		"prepublishOnly": "bun run build"
 	},
 	"devDependencies": {
-		"@better-auth/test-utils": "^1.6.9",
+		"@better-auth/test-utils": "^1.6.11",
 		"@surrealdb/node": "^3.0.3",
 		"@types/node": "^25.6.2",
 		"bumpp": "^11.1.0",
@@ -46,7 +46,7 @@
 		"vitest": "^4.1.5"
 	},
 	"peerDependencies": {
-		"better-auth": "^1.6.9",
+		"better-auth": "^1.6.11",
 		"surrealdb": "^2.0.3"
 	}
 }
