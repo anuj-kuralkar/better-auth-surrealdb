@@ -1,15 +1,16 @@
-import { testAdapter } from "@better-auth/test-utils/adapter";
+import {
+	authFlowTestSuite,
+	normalTestSuite,
+	testAdapter,
+	transactionsTestSuite,
+} from "@better-auth/test-utils/adapter";
 import { createNodeEngines } from "@surrealdb/node";
 import { getAuthTables } from "better-auth";
 import { createRemoteEngines, Surreal } from "surrealdb";
 
 import { surrealDBAdapter } from "../src";
 import { createSchema } from "../src/schema";
-import {
-	authFlowTestSuite,
-	normalTestSuite,
-	transactionsTestSuite,
-} from "./suits";
+import { normalTestSurrealSuite } from "./basic-surreal";
 
 const db = new Surreal({
 	engines: {
@@ -19,7 +20,7 @@ const db = new Surreal({
 });
 
 const { execute } = await testAdapter({
-	adapter: async (options) => {
+	adapter: async () => {
 		return surrealDBAdapter({ db });
 	},
 
@@ -33,7 +34,20 @@ const { execute } = await testAdapter({
 		await db.query(code);
 	},
 
-	tests: [normalTestSuite(), authFlowTestSuite(), transactionsTestSuite()],
+	tests: [
+		// These tests assume standard string IDs, but SurrealDB uses
+		// `table:id` record IDs, so they are covered in `normalTestSurrealSuite`.
+		normalTestSuite({
+			disableTests: {
+				"create - should create a model": true,
+				"create - should use generateId if provided": true,
+			},
+		}),
+		normalTestSurrealSuite(),
+
+		authFlowTestSuite(),
+		transactionsTestSuite(),
+	],
 
 	async onFinish() {
 		await db.close();
